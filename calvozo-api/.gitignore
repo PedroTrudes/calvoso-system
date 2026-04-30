@@ -1,0 +1,43 @@
+# Dependências
+node_modules/
+jspm_packages/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Cobertura de testes
+coverage/
+.nyc_output
+
+# Build e arquivos gerados
+dist/
+build/
+*.pid
+*.seed
+*.pid.lock
+
+# Variáveis de ambiente e segredos (NÃO COMMITAR)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Sistemas Operacionais
+.DS_Store
+Thumbs.db
