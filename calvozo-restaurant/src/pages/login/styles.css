@@ -1,0 +1,26 @@
+.containerFormLogin{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.containerFormImage{
+    width: 50%;
+}
+
+.containerFormImage img{
+    width: 100%;
+    object-fit: cover;
+    height: 100vh;
+}
+
+.containerForm{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 100vh;
+}

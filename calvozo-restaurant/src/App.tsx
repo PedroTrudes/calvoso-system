@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Login from "./pages/login";
-import Dashboard from "./pages/dashboard";
-import Kitchen from "./pages/kitchen";
-import Order from "./pages/order";
-import Product from "./pages/product";
+import {Login} from "./pages/login";
+import {Dashboard} from "./pages/dashboard";
+import {Kitchen} from "./pages/kitchen";
+import {Order} from "./pages/order";
+import {Product} from "./pages/product";
 
 function App() {
   return(
