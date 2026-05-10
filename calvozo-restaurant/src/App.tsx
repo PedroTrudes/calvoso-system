@@ -4,10 +4,13 @@ import {Dashboard} from "./pages/dashboard";
 import {Kitchen} from "./pages/kitchen";
 import {Order} from "./pages/order";
 import {Product} from "./pages/product";
+import {ToastContainer, toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return(
     <>
+      <ToastContainer autoClose={1000}/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
@@ -16,8 +19,8 @@ function App() {
           <Route path="/cozinha" element={<Kitchen />} />
           <Route path="/pedido" element={<Order />} />
           <Route path="/produto" element={<Product />} />
-        </Routes>
-      </BrowserRouter> 
+        </Routes> 
+      </BrowserRouter>
     </>
   )
 }

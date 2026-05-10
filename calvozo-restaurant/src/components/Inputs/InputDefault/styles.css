@@ -17,11 +17,21 @@ gap: 8px;
     padding: 8px;
     background-color: #eeeeee;
     transition: 0.6s all ease-in-out;
-    
+    padding: 12px;
 }
 
 .inputDefault:focus{
     outline: none;
     border: none;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@media (max-width: 768px) {
+    .containerFieldDefault{
+        width: 80%;
+    }
+
+    .inputDefault{
+        height: 30px;
+    }
 }

@@ -8,7 +8,7 @@ export function Login(){
                 <img src="./assets/bannerLoginForm.jpg" alt="" />
             </div>
             <div className='containerForm'>
-                <h2>Seja bem-vindo Calvozo</h2>
+                <h2 className='textForm'>Seja bem-vindo Calvozo</h2>
                 <FormLogin />
             </div> 
         </div>

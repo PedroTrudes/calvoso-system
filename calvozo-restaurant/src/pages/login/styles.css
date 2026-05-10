@@ -14,6 +14,7 @@
     width: 100%;
     object-fit: cover;
     height: 100vh;
+    border-radius: 8px 0px 0px 8px;
 }
 
 .containerForm{
@@ -23,4 +24,25 @@
     align-items: center;
     justify-content: center;
     max-height: 100vh;
+}
+
+.textForm{
+    font-size: 2em;
+}
+
+
+@media (max-width: 768px) {
+    .containerFormLogin{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .containerFormImage{
+        display: none;
+    }
+
+    .containerForm{
+        width: 100%;
+    }
 }
