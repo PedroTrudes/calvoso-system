@@ -1,0 +1,86 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #111827;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 24px 18px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+
+  position: sticky;
+  top: 0;
+}
+
+
+.sidebar__logo h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: #f9fafb;
+}
+
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 40px;
+
+  flex: 1;
+}
+
+.sidebar__nav a {
+  text-decoration: none;
+  color: #d1d5db;
+
+  padding: 14px 16px;
+  border-radius: 12px;
+
+  transition: all 0.2s ease;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.sidebar__nav a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+
+  transform: translateX(4px);
+}
+
+
+.sidebar__footer {
+  margin-top: 20px;
+}
+
+.sidebar__footer button {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: #1f2937;
+  color: #fff;
+
+  padding: 14px;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.sidebar__footer button:hover {
+  background: #374151;
+}
