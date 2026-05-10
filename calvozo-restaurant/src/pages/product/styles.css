@@ -1,0 +1,28 @@
+.containerProductPage{
+    background-color: #F6FAFD;
+    height: auto;
+    padding: 22px;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.productPageHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.productPageHeader h2{
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.productPageHeader button{
+
+}
+
+.productPageContainerList{
+    margin: 22px 0px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
