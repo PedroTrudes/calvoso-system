@@ -5,6 +5,7 @@ interface PropsButton extends React.ButtonHTMLAttributes<HTMLButtonElement>{
 }
 
 export function ButtonDefault({textButton, ...rest} : PropsButton){
+    
     return(
         <button {...rest} className="buttonDefaultPrimary">{textButton}</button>
     )

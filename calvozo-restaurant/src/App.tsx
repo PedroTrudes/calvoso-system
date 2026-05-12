@@ -8,6 +8,7 @@ import {ToastContainer, toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { PrivateLayout } from "./layouts/PrivateLayout";
 import { Menu } from "./pages/menu";
+import { RegisterProduct } from "./pages/registerProduct";
 
 function App() {
   return(
@@ -22,6 +23,7 @@ function App() {
             <Route path="/cozinha" element={<Kitchen />} />
             <Route path="/pedido" element={<Order />} />
             <Route path="/produto" element={<Product />} />
+            <Route path="/produto/registrar" element={<RegisterProduct />} />
             <Route path="/cardapio" element={<Menu />} />
           </Route>
         </Routes> 

@@ -9,8 +9,19 @@
 }
 
 .categoryList span{
+    cursor: pointer;
     padding: 2px 6px;
+    transition: 0.6s all ease-in-out;
+}
+
+.categoryMenuItem{
     text-decoration: underline;
+    color: rgb(88, 88, 88);
+}
+
+.categoryMenuItemActive{
+    text-decoration: none;
+    color: black;
 }
 
 .productList{

@@ -1,0 +1,14 @@
+.buttonFormsPrimary{
+    border: none;
+    padding: 12px 26px;
+    border-radius: 22px;
+    background-color: black;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.7s all ease-in-out;
+}
+
+.buttonFormsPrimary:hover{
+    background-color: rgb(46, 46, 46);
+}

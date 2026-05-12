@@ -8,6 +8,11 @@
     border-radius: 8px;
     width: 100%;
     min-width: 0;
+    cursor: pointer;
+}
+
+.cardUnavailable{
+    opacity: 50%;
 }
 
 .containerProductHeader{

@@ -8,11 +8,12 @@ interface CardProductProps{
     preco: number;
     categoria: string;
     imagem: string;
+    disponivel: boolean;
 }
 
-export function CardsProducts({nome, descricao, preco, categoria, imagem}: CardProductProps) {
+export function CardsProducts({nome, descricao, preco, categoria, imagem, disponivel}: CardProductProps) {
     return(
-        <div className="cardProduct">
+        <div className={disponivel ? 'cardProduct': 'cardProduct cardUnavailable'}>
             <div className="containerProductHeader">
                 <span className="badgeCategory">{categoria}</span>
                 <img src={imagem} alt="" />
