@@ -4,11 +4,13 @@ import {Dashboard} from "./pages/dashboard";
 import {Kitchen} from "./pages/kitchen";
 import {Order} from "./pages/order";
 import {Product} from "./pages/product";
-import {ToastContainer, toast} from "react-toastify"
+import {ToastContainer} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { PrivateLayout } from "./layouts/PrivateLayout";
 import { Menu } from "./pages/menu";
 import { RegisterProduct } from "./pages/registerProduct";
+import { PublicMenu } from "./pages/public/publicMenu";
+import { EditProduct } from "./pages/editProdutct";
 
 function App() {
   return(
@@ -18,11 +20,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/restaurant/menu" element={<PublicMenu />} />
           <Route element={<PrivateLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/cozinha" element={<Kitchen />} />
             <Route path="/pedido" element={<Order />} />
             <Route path="/produto" element={<Product />} />
+            <Route path="/produto/:id" element={<EditProduct />} />
             <Route path="/produto/registrar" element={<RegisterProduct />} />
             <Route path="/cardapio" element={<Menu />} />
           </Route>
