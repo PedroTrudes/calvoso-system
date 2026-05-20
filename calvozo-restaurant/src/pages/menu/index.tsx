@@ -43,7 +43,7 @@ export function Menu() {
         {
           tamanho: "p",
           preco: 18,
-          disponivel: true,
+          disponivel: false,
         },
         {
           tamanho: "m",
@@ -62,7 +62,7 @@ export function Menu() {
       id: 2,
       nome: "Lasanha Bolonhesa",
       descricao: "Lasanha artesanal com molho bolonhesa e queijo gratinado.",
-      categoria: "Massas",
+      categoria: "Porções",
       imagem:
         "https://images.unsplash.com/photo-1619895092538-128341789043?q=80&w=1200&auto=format&fit=crop",
       disponivel: true,
@@ -146,7 +146,7 @@ export function Menu() {
       id: 5,
       nome: "Hambúrguer Artesanal",
       descricao: "Pão brioche, hambúrguer 180g e cheddar.",
-      categoria: "Lanches",
+      categoria: "Porções",
       imagem:
         "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop",
       disponivel: true,
@@ -202,7 +202,7 @@ export function Menu() {
       id: 7,
       nome: "Pizza Calabresa",
       descricao: "Molho artesanal, queijo e calabresa fatiada.",
-      categoria: "Pizzas",
+      categoria: "Porções",
       imagem:
         "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop",
       disponivel: true,
