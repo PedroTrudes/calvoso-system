@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model category {
+  id      Int       @id @default(autoincrement())
+  name    String    @db.VarChar(100)
+  product product[]
+}
+
+model order_item {
+  id                      Int                @id @default(autoincrement())
+  order_id_FK             Int?
+  product_variation_id_FK Int?
+  amount                  Int
+  unit_price              Decimal            @db.Decimal(10, 2)
+  order_status            String             @db.VarChar(50)
+  observation             String?            @db.VarChar(100)
+  product_variation       product_variation? @relation(fields: [product_variation_id_FK], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "order_item_ibfk_1")
+  ordered                 ordered?           @relation(fields: [order_id_FK], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "order_item_ibfk_2")
+
+  @@index([order_id_FK], map: "order_id_FK")
+  @@index([product_variation_id_FK], map: "product_variation_id_FK")
+}
+
+model ordered {
+  id               Int          @id @default(autoincrement())
+  creatAt          DateTime     @db.DateTime(0)
+  status_operation String       @db.VarChar(50)
+  identifier       String       @db.VarChar(50)
+  total_price      Decimal      @db.Decimal(10, 2)
+  type_order_FK    Int?
+  order_item       order_item[]
+  type_order       type_order?  @relation(fields: [type_order_FK], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "ordered_ibfk_1")
+
+  @@index([type_order_FK], map: "type_order_FK")
+}
+
+model product {
+  id                Int                 @id @default(autoincrement())
+  name              String              @db.VarChar(100)
+  description       String?             @db.Text
+  menu_active       Boolean
+  category_id_FK    Int?
+  category          category?           @relation(fields: [category_id_FK], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "product_ibfk_1")
+  product_variation product_variation[]
+
+  @@index([category_id_FK], map: "category_id_FK")
+}
+
+model product_variation {
+  id               Int          @id @default(autoincrement())
+  product_id_FK    Int?
+  name             String       @db.VarChar(100)
+  price            Decimal      @db.Decimal(10, 2)
+  variation_active Boolean
+  order_item       order_item[]
+  product          product?     @relation(fields: [product_id_FK], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "product_variation_ibfk_1")
+
+  @@index([product_id_FK], map: "product_id_FK")
+}
+
+model type_order {
+  id        Int       @id @default(autoincrement())
+  name_type String    @db.VarChar(50)
+  charge    Decimal?  @db.Decimal(10, 2)
+  ordered   ordered[]
+}
