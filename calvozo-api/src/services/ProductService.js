@@ -1,7 +1,22 @@
 const prisma = require("../config/prisma");
 
+async function create(data) {
+    return await prisma.product.create({data});
+}
+
 async function findAllProduct() {
     return await prisma.product.findMany();
+}
+
+async function findByIdProduct(id) {
+    const product = await prisma.product.findUnique({where: {
+        id: id
+    }});
+    if(!product){
+        throw new Error("Produto não localizado");
+    }
+    return product;
+
 }
 
 async function findAllProductByCategory(id) {
@@ -12,17 +27,8 @@ async function findAllProductByCategory(id) {
     return products;
 }
 
-async function create(data) {
-    return await prisma.product.create({data});
-}
-
 async function toggleActive(id) {
-    const product = await prisma.product.findUnique({where: {
-        id: id
-    }});
-    if(!product){
-        throw new Error("Produto não localizado");
-    }
+    const product = await findByIdProduct(id);
     return await prisma.product.update({where: {
         id: id
     },
@@ -33,13 +39,8 @@ async function toggleActive(id) {
 }
 
 async function update(id, dt) {
-    const product = await prisma.product.findUnique({where: {
-        id: id
-    }});
-
-    if(!product) {
-        throw new Error("Produto não localizado");
-    }
+    await findByIdProduct(id);
+    
     return await prisma.product.update({where: {
         id: id 
     },
@@ -51,5 +52,5 @@ async function update(id, dt) {
 
 
 module.exports = {
-    findAllProduct, findAllProductByCategory, create, toggleActive
+    findAllProduct, findAllProductByCategory, create, toggleActive, update, findByIdProduct
 };
