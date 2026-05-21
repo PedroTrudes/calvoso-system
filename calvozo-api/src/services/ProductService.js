@@ -32,6 +32,23 @@ async function toggleActive(id) {
 })
 }
 
+async function update(id, dt) {
+    const product = await prisma.product.findUnique({where: {
+        id: id
+    }});
+
+    if(!product) {
+        throw new Error("Produto não localizado");
+    }
+    return await prisma.product.update({where: {
+        id: id 
+    },
+    data: {
+        ...dt
+    }
+})
+}
+
 
 module.exports = {
     findAllProduct, findAllProductByCategory, create, toggleActive

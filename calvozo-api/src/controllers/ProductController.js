@@ -44,6 +44,14 @@ async function toggle(req, res) {
     }
 }
 
+async function updateProduct(req, res) {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
+
 module.exports = {
-    getProducts, getProductsByCategory, createProduct, toggle
+    getProducts, getProductsByCategory, createProduct, toggle, updateProduct
 }
