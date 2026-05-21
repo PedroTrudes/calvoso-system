@@ -45,7 +45,6 @@ async function getProductsByCategory(req, res) {
     }
 }
 
-
 async function toggle(req, res) {
     try {
         const {id} = req.params;

@@ -38,9 +38,7 @@ async function toggleActive(id) {
 })
 }
 
-async function update(id, dt) {
-    await findByIdProduct(id);
-    
+async function update(id, dt) {    
     return await prisma.product.update({where: {
         id: id 
     },
