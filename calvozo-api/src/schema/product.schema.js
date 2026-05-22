@@ -1,5 +1,4 @@
 const {z} = require('zod');
-const { category } = require('../config/prisma');
 
 const createProductSchema = z.object({
     name: z.string(),
