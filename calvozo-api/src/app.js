@@ -1,9 +1,15 @@
-import express from 'express';
-import productRoutes from './routes/ProductRoutes.js';
+const express = require('express');
+
+const productVariationRoutes = require('./routes/productVariationRoutes');
+const productRoutes = require('./routes/ProductRoutes');
+const categoryRoutes = require('./routes/CategoryRoutes');
+
 const app = express();
 
-app.use(express.json);
+app.use(express.json());
 
+app.use("/products/variation", productVariationRoutes);
 app.use('/products', productRoutes)
+app.use("/categories", categoryRoutes);
 
-export default app;
+module.exports = app;

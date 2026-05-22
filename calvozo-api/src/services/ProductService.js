@@ -48,7 +48,21 @@ async function update(id, dt) {
 })
 }
 
+async function findProductWithVariation() {
+    return await prisma.product.findMany({
+        include: {
+            product_variation: true
+        }
+    })
+}
+
 
 module.exports = {
-    findAllProduct, findAllProductByCategory, create, toggleActive, update, findByIdProduct
+    findAllProduct, 
+    findAllProductByCategory, 
+    create, 
+    toggleActive, 
+    update, 
+    findByIdProduct,
+    findProductWithVariation
 };

@@ -9,17 +9,17 @@ async function createProduct(req, res) {
         console.log(product);
         return res.status(201).json(product);
     } catch (error) {
-        return res.status(500).json({message: error});
+        return res.status(500).json({message: error.erros || error.message})
     }
 }
 
 async function getProducts(req, res) {
     try {
-        const product = await productService.findAllProduct();
+        const product = await productService.findProductWithVariation();
         return res.json(product);
     } catch (error) {
         console.log(error);
-        return res.status(500).json({message: 'internal server error'});
+        return res.status(500).json({message: error.erros || error.message})
     }
 }
 
