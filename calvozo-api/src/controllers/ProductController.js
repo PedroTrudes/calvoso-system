@@ -1,4 +1,5 @@
 const productService = require('../services/ProductService');
+const productVariationService = require('../services/ProductVariationService');
 const {createProductSchema, updateProductSchema} = require('../schema/product.schema');
 
 
@@ -67,5 +68,10 @@ async function updateProduct(req, res) {
 }
 
 module.exports = {
-    getProducts, getProductsByCategory, createProduct, toggle, updateProduct, getByIdProduct
+    getProducts, 
+    getProductsByCategory, 
+    createProduct, 
+    toggle, 
+    updateProduct, 
+    getByIdProduct
 }

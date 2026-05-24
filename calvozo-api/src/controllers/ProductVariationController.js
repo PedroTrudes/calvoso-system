@@ -40,9 +40,20 @@ async function getAllProductVariation(req, res) {
     }
 }
 
+async function toggleVariation(req, res) {
+    try {
+        const {id} = req.params;
+        const productVariation = await productVariationService.toggleActive(Number(id));
+        return res.json(productVariation);
+    } catch (error) {
+        return res.status(500).json({message: error.erros || error.message})
+    }
+}
+
 
 module.exports = {
     createProductVariation,
     getAllProductVariation,
-    getVariationByProductId
+    getVariationByProductId,
+    toggleVariation
 }
