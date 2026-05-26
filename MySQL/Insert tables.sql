@@ -1,10 +1,11 @@
-INSERT INTO category (name)
+INSERT INTO category (name, is_active)
 VALUES
-('Hamburguer'),
-('Pizza'),
-('Bebida'),
-('Porção'),
-('Marmitex');
+('Hamburguer', true),
+('Pizza', true),
+('Bebida', true),
+('Porção', true),
+('Marmitex', true);
+INSERT INTO category (name, is_active) Value ('Teste', true);
 
 INSERT INTO product
 (name, description, menu_active, category_id_FK)

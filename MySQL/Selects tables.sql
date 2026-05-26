@@ -33,7 +33,7 @@ pv.price
 FROM product_variation pv
 INNER JOIN product p
 ON pv.product_id_FK = p.id;
-
+Select * from category;
 SELECT
 o.id,
 o.name_order,
@@ -62,3 +62,6 @@ INNER JOIN product p
 ON pv.product_id_FK = p.id;
 
 select * from ordered o inner join type_order typ on o.type_order_FK = typ.id where typ.charge > 0.00;
+
+
+select * from order_item;
