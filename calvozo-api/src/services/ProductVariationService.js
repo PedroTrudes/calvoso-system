@@ -1,10 +1,10 @@
 const prisma = require("../config/prisma");
 
-async function createProductVariation(data) {
+async function create(data) {
   return await prisma.product_variation.create({ data });
 }
 
-async function findAllProductVariation() {
+async function getAll() {
   return await prisma.product_variation.findMany({
     include: {
       product: true,
@@ -12,7 +12,7 @@ async function findAllProductVariation() {
   });
 }
 
-async function findByIdVariation(id) {
+async function getById(id) {
   const productVariation = await prisma.product_variation.findUnique({
     where: { id: id },
     include: {
@@ -38,7 +38,7 @@ async function toggleActive(id) {
   });
 }
 
-async function findVariationByProduct(id) {
+async function getByProduct(id) {
   return await prisma.product_variation.findMany({
     where: {
       product_id_FK: id,
@@ -49,10 +49,22 @@ async function findVariationByProduct(id) {
   });
 }
 
+async function update(id, dt) {
+  return await prisma.product_variation.update({where: {
+    id: id
+  },
+  data: {
+    ...dt
+  }
+})
+}
+
+
 module.exports = {
-  createProductVariation,
-  findAllProductVariation,
-  findByIdVariation,
-  findVariationByProduct,
+  create,
+  getAll,
+  getById,
+  getByProduct,
   toggleActive,
+  update
 };

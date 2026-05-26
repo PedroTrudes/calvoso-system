@@ -3,9 +3,10 @@ const productVariationController = require("../controllers/ProductVariationContr
 
 const router = express.Router();
 
+router.post('/:id', productVariationController.createVariation);
 router.get('/', productVariationController.getAllProductVariation);
-router.post('/:id', productVariationController.createProductVariation);
 router.get('/:id', productVariationController.getVariationByProductId);
 router.patch('/:id/toggle', productVariationController.toggleVariation)
+router.patch('/:id', productVariationController.updateVariation)
 
 module.exports = router;
