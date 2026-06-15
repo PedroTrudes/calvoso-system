@@ -1,10 +1,13 @@
 const express = require("express");
-const OrderItemController = require("../controllers/OrderItemController");
+const orderItemController = require("../controllers/OrderItemController");
 
 const app = express.Router();
 
-app.post('/', OrderItemController.createOrderItem);
-app.get('/', OrderItemController.getAllOrderItem);
+app.post('/', orderItemController.createOrderItem);
+app.get('/', orderItemController.getAllOrderItem);
+app.get('/:id', orderItemController.getByIdOrderItem);
+app.patch('/:id', orderItemController.updateOderItem);
+app.delete('/:id', orderItemController.deleteOderItem);
 
 
 module.exports = app;

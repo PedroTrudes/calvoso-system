@@ -15,7 +15,7 @@ app.use("/products/variation", productVariationRoutes);
 app.use("/products", productRoutes);
 app.use("/categories", categoryRoutes);
 app.use("/typeorder", typeOrderRoutes);
-app.use("/ordered", orderedRoutes);
+app.use("/ordered", orderedRoutes); 
 app.use("/cart/item", orderItemRoutes)
 
 module.exports = app;
