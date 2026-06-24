@@ -11,19 +11,21 @@ export function CategoryFilter({
   selectCategory,
   onSelectCategory,
 }: CategoryListProps) {
+
+  console.log("Categorias da API: " , categories);
   return (
     <div className="categoryList">
       {categories.map((list) => (
         <span
           key={list.id}
-          onClick={() => onSelectCategory(list.category)}
+          onClick={() => onSelectCategory(list.name)}
           className={
-            selectCategory === list.category
+            selectCategory === list.name
               ? "categoryMenuItemActive"
               : "categoryMenuItem"
           }
         >
-          {list.category}
+          {list.name}
         </span>
       ))}
     </div>

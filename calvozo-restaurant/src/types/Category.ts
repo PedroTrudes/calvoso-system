@@ -1,4 +1,5 @@
 export interface CategoryProduct {
     id: number;
-    category: string;
+    name: string;
+    is_active: boolean;
 }

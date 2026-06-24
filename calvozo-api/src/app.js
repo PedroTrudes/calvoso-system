@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 
 const productVariationRoutes = require("./routes/productVariationRoutes");
 const productRoutes = require("./routes/ProductRoutes");
@@ -8,6 +9,13 @@ const orderedRoutes = require("./routes/OrderedRoutes");
 const orderItemRoutes = require("./routes/OrderItemRoutes");
 
 const app = express();
+
+app.use(cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
 
 app.use(express.json());
 

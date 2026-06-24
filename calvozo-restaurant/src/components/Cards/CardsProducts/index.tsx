@@ -2,31 +2,32 @@ import { useNavigate } from 'react-router-dom';
 import { formatCurrency } from '../../../utils/formatCurrency';
 import './styles.css';
 
-interface VariantProduct{
-    tamanho: string; 
-    preco: number;
-}
 
-interface CardProductProps{
+interface Props {
     id: number;
     nome: string;
     descricao: string;
-    categoria: string;
-    imagem: string;
+    categoria: {
+        id: number;
+        name: string;
+    };
     disponivel: boolean;
-    variant: VariantProduct[];
+    variant: {
+        id: number;
+        name: string;
+    }[];
 }
 
-export function CardsProducts({id, nome, descricao, categoria, imagem, disponivel, variant}: CardProductProps) {
+export function CardsProducts(
+    {id, nome, descricao, categoria, disponivel, variant}: Props) 
+    {
     const navigate = useNavigate();
-
-    console.log(variant.map((item) => {
-        console.log(item);
-    }) )
+    const imagem = "https://areademulher.r7.com/wp-content/uploads/2022/03/feijoada-receita-completa-tradicional.jpg";
+    const preco = 11;
     return(
         <div className={disponivel ? 'cardProduct': 'cardProduct cardUnavailable'} onClick={() => navigate(`/produto/${id}`)}>
             <div className="containerProductHeader">
-                <span className="badgeCategory">{categoria}</span>
+                <span className="badgeCategory">{categoria.name}</span>
                 <img src={imagem} alt="" />
             </div>
             <div className="containerProductDescription">
@@ -35,10 +36,10 @@ export function CardsProducts({id, nome, descricao, categoria, imagem, disponive
             </div>
             <div className="containerProductPrice">
                 <span>Medidas</span>
-                {variant.map((item) => (
-                    <div className="containerVariationProduct">
-                        <span>Tamanho: {item.tamanho.toUpperCase()}</span>
-                        <span>Valor: {formatCurrency(item.preco)}</span>
+                {variant?.map((item) => (
+                    <div key={item.id} className="containerVariationProduct">
+                        <span>{item.name.toUpperCase()}</span>
+                        <span>{formatCurrency(preco)}</span>
                     </div>
                 ))}
             </div>
