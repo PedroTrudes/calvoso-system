@@ -1,14 +1,16 @@
 export interface Product {
     id: number;
-    nome: string;
-    descricao: string;
-    categoria: string;
+    name: string;
+    description: string;
+    menu_active: boolean;
     imagem: string;
-    disponivel: boolean;
-
-    variacoes: {
-        tamanho: string,
-        preco: number,
-        disponivel:boolean
+    category: {
+        id: number;
+        name: string
+    };
+    product_variation: {
+        id: number;
+        name: string;
+        variation_active: boolean;
     }[];
 }
