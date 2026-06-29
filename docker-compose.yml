@@ -1,52 +1,21 @@
-services: 
-  mysql: 
+services:
+
+  mysql:
     image: mysql:8.4
+
     container_name: calvozo-mysql
+
+    restart: unless-stopped
 
     environment:
       MYSQL_ROOT_PASSWORD: "!Trudes3005"
       MYSQL_DATABASE: calvozo
 
-    ports: 
+    ports:
       - "3306:3306"
 
-    volumes: 
+    volumes:
       - mysql_data:/var/lib/mysql
-  
-  backend: 
-    build:
-      context: ./calvozo-api
-    
-    container_name: calvozo-api
-    
-    ports: 
-      - "3000:3000"
-
-    volumes:
-      - ./calvozo-api:/app
-      - /app/node_modules
-
-    env_file:
-      - ./calvozo-api/.env
-
-    depends_on:
-      - mysql
-
-  frontend: 
-    build:
-      context: ./calvozo-restaurant
-
-    container_name: calvozo-restaurant
-
-    ports: 
-      - "5173:5173"
-    
-    volumes:
-      - ./calvozo-restaurant:/app
-      - /app/node_modules
-
-    depends_on:
-      - backend
 
 volumes:
   mysql_data:
